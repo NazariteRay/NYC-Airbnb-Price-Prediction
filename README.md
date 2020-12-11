@@ -1,5 +1,7 @@
 # Airbnb-Price-Prediction
 
+In this project, our goal is to make a prediction of Airbnb listing prices in one of the most popular tourism and business places in the world --- New York City. The result of the prediction will provide a point of reference to the people who are preparing a NYC journey about the accommodation listing price in NYC, which could help them have a general idea about their accommodation budget.
+
 ## Data Cleaning
 
 We used panda libraries to help us clean up the data. First we import the ‘listings_new.csv’ file, remove all the empty and NA rows in the csv file. In order to run model effectively in later work, we changed ‘f’ and ’t’ in columns ’host_is_superhost’, 'host_has_profile_pic' , ’host_identity_verified' and 'instant_bookable' to ‘0’ and ‘1’. ‘f’s were changed to 0 and ’t’s were changed to ‘1’. Whether an accommodation has a shared bathroom or not will be one of the reasons that affects the renting price, this point has to be defined in the data cleaning process. If it has a shared bathroom, respond ‘1’, otherwise, respond ‘0’. Furthermore, we changed the accommodation price into integer. Moreover, we removed outliers in data by using IQR, and we found that the upper bound price is 291.5.  Therefore, we removed the rows which have prices that exceed the upper bound (291.5) interval. Finally, in order to have normally distributed data, we added log price to column ‘price’. 
